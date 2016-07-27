@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}MindBundle:FrontController:index{% endblock %}
+
+{% block body %}
+<h1>Welcome to the FrontController:index page</h1>
+
+<div class="col-md-12">
+
+	<div class="col-md-6">
+
+	<button class="btn btn-primary" type="button">
+  		Products: <span class="badge">{{ howmany_products }}</span>
+	</button>
+			{% for product in products %} 
+				<h2><b>{{ product.name }}<b/></h2>
+                <h3>{{ product.description }} </h3>
+                <h3>{{ product.price }}</h3>
+			{% endfor %}
+	</div>
+	<div class="col-md-6">
+		<button class="btn btn-primary" type="button">
+	  		 Posts: <span class="badge">{{ howmany_posts }}</span>
+		</button>
+				{% for post in posts %}
+				<h2>{{ post.title }}</h2>
+				<h5><i>Created on </i></h5>
+                <h3>{{ post.body }} <a href="#" style="font-size: 12px;"><i>Read more ...</i></a></h3> 
+			{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

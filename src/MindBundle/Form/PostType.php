@@ -19,6 +19,7 @@ class PostType extends AbstractType
             ->add('body')
             ->add('isdraft')
         ;
+        $options = array('class' => 'form-control');
     }
     
     /**
